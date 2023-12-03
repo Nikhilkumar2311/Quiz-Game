@@ -1,74 +1,81 @@
 package com.example.quizgame
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import com.example.quizgame.databinding.ActivityGkquizBinding
+import android.widget.Button
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class GKquizActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityGkquizBinding
+    private lateinit var questionTextView: TextView
+    private lateinit var option1Button: Button
+    private lateinit var option2Button: Button
+    private lateinit var option3Button: Button
+    private lateinit var option4Button: Button
+
     private lateinit var list: ArrayList<QuestionModel>
     private var count: Int = 0
     private var score = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityGkquizBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_gkquiz)
 
         // Initialize the list
         list = ArrayList<QuestionModel>()
 
-        list.add(QuestionModel("Which planet is known as the Red Planet?", "Venus","Mars", "Jupiter", "Saturn","Mars"))
+        list.add(QuestionModel("Which planet is known as the Red Planet?", "Venus", "Mars", "Jupiter", "Saturn", "Mars"))
         list.add(QuestionModel("Who wrote the famous play Romeo and Juliet?", "Charles Dickens","William Shakespeare", "Jane Austen", "Mark Twain","William Shakespeare"))
         list.add(QuestionModel("What is the largest mammal in the world?", "African Elephant","Blue Whale", "Giraffe", "Polar Bear","Blue Whale"))
         list.add(QuestionModel("Which famous ancient wonder was located in the city of Alexandria in Egypt?", "The Hanging Gardens of Babylon","The Statue of Zeus at Olympia", "The Lighthouse of Alexandria", "The Temple of Artemis at Ephesus","The Lighthouse of Alexandria"))
         list.add(QuestionModel("What is the chemical symbol for gold?", "Gd","Au", "Ag", "Go","Au"))
 
-        binding.question.setText(list.get(0).question)
-        binding.Option1.setText(list.get(0).Option1)
-        binding.Option2.setText(list.get(0).Option2)
-        binding.Option3.setText(list.get(0).Option3)
-        binding.Option4.setText(list.get(0).Option4)
+        questionTextView = findViewById(R.id.question)
+        option1Button = findViewById(R.id.Option1)
+        option2Button = findViewById(R.id.Option2)
+        option3Button = findViewById(R.id.Option3)
+        option4Button = findViewById(R.id.Option4)
 
-        binding.Option1.setOnClickListener {
-            nextData(binding.Option1.text.toString())
+        questionTextView.text = list[0].question
+        option1Button.text = list[0].Option1
+        option2Button.text = list[0].Option2
+        option3Button.text = list[0].Option3
+        option4Button.text = list[0].Option4
+
+        option1Button.setOnClickListener {
+            nextData(option1Button.text.toString())
         }
-        binding.Option2.setOnClickListener {
-            nextData(binding.Option2.text.toString())
+        option2Button.setOnClickListener {
+            nextData(option2Button.text.toString())
         }
-        binding.Option3.setOnClickListener {
-            nextData(binding.Option3.text.toString())
+        option3Button.setOnClickListener {
+            nextData(option3Button.text.toString())
         }
-        binding.Option4.setOnClickListener {
-            nextData(binding.Option4.text.toString())
+        option4Button.setOnClickListener {
+            nextData(option4Button.text.toString())
         }
     }
 
-    private fun nextData(i: String){
-
-        if (count<list.size){
-            if (list.get(count).ans.equals(i)){
+    private fun nextData(selectedOption: String) {
+        if (count < list.size) {
+            if (list[count].ans == selectedOption) {
                 score++
             }
         }
 
         count++
-        if (count>=list.size){
+        if (count >= list.size) {
             val intent = Intent(this, ScoreActivity::class.java)
             intent.putExtra("SCORE1", score)
             startActivity(intent)
             finish()
+        } else {
+            questionTextView.text = list[count].question
+            option1Button.text = list[count].Option1
+            option2Button.text = list[count].Option2
+            option3Button.text = list[count].Option3
+            option4Button.text = list[count].Option4
         }
-        else{
-            binding.question.setText(list.get(count).question)
-            binding.Option1.setText(list.get(count).Option1)
-            binding.Option2.setText(list.get(count).Option2)
-            binding.Option3.setText(list.get(count).Option3)
-            binding.Option4.setText(list.get(count).Option4)
-        }
-
     }
 }
