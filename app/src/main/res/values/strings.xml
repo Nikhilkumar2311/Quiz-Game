@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="quiz">Flashcard Quiz</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="login">Login</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="register">Register</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="log_out">Log out</string>
+    <string name="search">Search...</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="general_knowledge">General Knowledge</string>
+    <string name="_2">2</string>
+    <string name="sports_quiz">Sports Quiz</string>
+    <string name="symbol">Symbol</string>
+    <string name="_5">5</string>
+    <string name="maths_quiz">Maths Quiz</string>
+    <string name="_10">10</string>
+    <string name="science_quiz">Science Quiz</string>
+    <string name="_15">15</string>
+    <string name="computer_quiz">Computer Quiz</string>
+    <string name="logo">logo</string>
+    <string name="hello">Hello!!</string>
+    <string name="_6">6</string>
+    <string name="q1_who_is_the_pm_of_india"><![CDATA[Q1> Who is the PM of India?]]></string>
+    <string name="option_1">Option 1</string>
+    <string name="option_2">Option 2</string>
+    <string name="option_3">Option 3</string>
+    <string name="option_4">Option 4</string>
+    <string name="congrats_your_score_is_4">Congrats!!! Your Score is 4</string>
+    <string name="welcome_to_my_quiz_game">Welcome to my Quiz Game</string>
+</resources>

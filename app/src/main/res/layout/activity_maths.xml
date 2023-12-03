@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MathsActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="133dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="139dp"
+        android:src="@drawable/ic_maths"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="315dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/q1_who_is_the_pm_of_india"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/Option1"
+        android:layout_width="141dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/button_background"
+        android:text="@string/option_1"
+        app:layout_constraintStart_toStartOf="@+id/question"
+        app:layout_constraintTop_toBottomOf="@+id/question" />
+
+    <Button
+        android:id="@+id/Option2"
+        android:layout_width="141dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_background"
+        android:text="@string/option_2"
+        app:layout_constraintEnd_toEndOf="@+id/question"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/Option1"
+        app:layout_constraintTop_toBottomOf="@+id/question" />
+
+    <Button
+        android:id="@+id/Option3"
+        android:layout_width="141dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/button_background"
+        android:text="@string/option_3"
+        app:layout_constraintEnd_toEndOf="@+id/Option1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Option1"
+        app:layout_constraintTop_toBottomOf="@+id/Option1" />
+
+    <Button
+        android:id="@+id/Option4"
+        android:layout_width="141dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/button_background"
+        android:text="@string/option_4"
+        app:layout_constraintEnd_toEndOf="@+id/Option2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Option2"
+        app:layout_constraintTop_toBottomOf="@+id/Option2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
